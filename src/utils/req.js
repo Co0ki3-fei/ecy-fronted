@@ -6,8 +6,12 @@ export const get = function (url, data = {}) {
       url: url,
       data: data,
       method: 'GET',
+      timeout: 2000,
       success: function (res){
         resolve(res.data)
+      },
+      fail: function (){
+        resolve("请求失败")
       }
     })
   })
@@ -19,8 +23,12 @@ export const post = function (url, data = {}){
       url: url,
       data: data,
       method:'POST',
+      timeout: 2000,
       success: function (res){
         resolve(res.data)
+      },
+      fail: function (){
+        resolve("请求失败")
       }
     })
   })
@@ -32,8 +40,12 @@ export const put = function (url, data = {}){
       url:url,
       data:data,
       method:'PUT',
+      timeout: 2000,
       success: function (res){
         resolve(res.data)
+      },
+      fail: function (){
+        resolve("请求失败")
       }
     })
   })
@@ -45,21 +57,13 @@ export const del = function (url, data = {}){
      url:url,
      data:data,
      method:'DELETE',
+     timeout: 2000,
      success: function (res){
        resolve(res.data)
+     },
+     fail: function (){
+       resolve("请求失败")
      }
    })
   })
 }
-
-
-/*
-  6
-  我昨天是写了new Promise
- 这怎么区分get和post哇
- 我昨天没加双引号
- emm
-  ?没听清
-  .js
-  这个破后缀名怎么一会儿要一会儿不要的
-*/

@@ -1,7 +1,7 @@
-const Server = 'http://101.35.11.84:9898'
+const Server = 'http://localhost:8080'
 
 const urls = {
-  base: Server + '/proj/all'
+  base: Server + '/'
 }
 
 export default urls
